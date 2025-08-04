@@ -126,21 +126,9 @@ export default function App() {
   };
 
   const excluirPaciente = (id) => {
-    Alert.alert(
-      'Confirmar exclusão',
-      'Tem certeza que deseja excluir este paciente?',
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        { 
-          text: 'Excluir', 
-          onPress: () => {
-            const novosPacientes = pacientes.filter(p => p.id !== id);
-            setPacientes(novosPacientes);
-            salvarPacientes(novosPacientes);
-          }
-        }
-      ]
-    );
+    const novosPacientes = pacientes.filter(p => p.id !== id);
+    setPacientes(novosPacientes);
+    salvarPacientes(novosPacientes);
   };
 
   const editarPaciente = (paciente) => {
